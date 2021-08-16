@@ -1,4 +1,4 @@
-# Promise & Async, Await
+# Promise
 
 #### Promise.all
 
