@@ -138,27 +138,16 @@ app.listen(PORT, handleListening);
 \_정의 : node.js용 request logger middleware.  
 요청에 대한 정보를 콘솔에 기록해준다.
 
-morgan 함수를 호출하면 내가 설정한 대로 middleware를 return 해준다.
+---
 
-함수의 인자로
+log란?
 
-- dev
-
-- short
-
-- common
-
-- combined
-
-등을 줄 수 있다.
-
-#### Morgan function
+- 어플리케이션은 개발 및 운영시에 로그를 남길 필요가 있다.  
+  특히 운영시에는 장애가 밠생했을 때 사용자가 겪는 장애 현상만으로는 장ㅇ애의 원인을 판단하기가 어렵다.  
+  이럴 떄 관리자나 개발자가 어플리케이션서 어떤 일이 발생했는지 판단할 정보가 필요하게 되고 이때 어플리케이션 정보를 기록하는 것이 로깅이다.
 
 ---
 
-\_정의 : node.js용 request logger middleware.  
-요청에 대한 정보를 콘솔에 기록해준다.
-
 morgan 함수를 호출하면 내가 설정한 대로 middleware를 return 해준다.
 
 함수의 인자로
@@ -172,6 +161,8 @@ morgan 함수를 호출하면 내가 설정한 대로 middleware를 return 해�
 - combined
 
 등을 줄 수 있다.
+
+#
 
 ```javascript
 import express from "express";
