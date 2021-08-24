@@ -204,3 +204,69 @@ console.log(mixed.size); // big
 
 'color'라는 propery가 겹친다.  
 이때 가장 뒤에 있는 obj의 값인 fruit2 의 color의 value인 'blue'가 mixed의 key값으로 덮어씌워진다.
+
+## 오늘 배운 것
+
+### HTTP
+
+---
+
+- 웹상에서 클라이언트와 서버 간에 데이터를 주고 받을 수 있는 프로토콜(통신 규약, 약속)
+- HTTP 메소드에는 2가지 방식이 있는데, GET방식과 POST방식이다.
+
+_메소드 : form과 backend 사이의 정보 전송에 관한 방식_
+
+#
+
+#### 1. GET
+
+---
+
+URL에 파라미터를 포함시켜 **요청**하는 방식이다.  
+데이터가 노출되기 때문에 보안에 취약하며, 개인정보가 포함되지 않는 상황에서 캐싱을 하여 페이지 로딩 속도를 높일 때 사용된다.  
+즉, 그냥 데이터를 받는게 목적일 떄
+_e.g. 검색할 때_
+
+#
+
+#### 2. POST
+
+---
+
+파일을 보내거나, database에 있는 값을 바꾸는 뭔가를 보낼 때 사용.  
+BODY에 데이터를 넣어 전송하고 GET과는 달리 길이의 제한이 없다. BODY에 데이터가 들어가기 때문에 GET보다는 보안상 유리하지만 민감한 데이터는 꼭 암호화해줘야 한다.  
+즉, 무언가를 수정하고 추가하고 삭제하고 싶을 때.
+_e.g. 로그인_
+
+##### action
+
+> <form method="POST" action= "데이터가 도착하게 될 URL"></form>
+
+쓰면 해당 URL로 POST request를 보내준다.
+쓰지않으면 똑같은(속해있는 URL에 request를 보낸다.
+
+---
+
+#### req.params
+
+: 만들어진 url router 안에 있는 파라미터값을 받아온다.
+
+```javascript
+export const watch = (req, res) => {
+  const { id } = req.params; // { id : ??}
+  const video = videos[id - 1];
+  return res.render("watch", { pageTitle: `Watching ${video.title}`, video });
+};
+```
+
+#
+
+#### req.body
+
+: form에서 받아온 value의 javascript represtation.  
+하지만 이를 사용하기 위해선 express 가 form을 이해할 수 있도록 만들어야한다.  
+**(+ input의 name도 반드시 정의해주어야한다!)**
+
+> app.use(express.urlencoded({ extended : true}))
+
+우리가 사용할 수 있는 javascript object 형식으로 통역 해준다. 단, middleware에서 미리 사용을 해야한다
