@@ -44,7 +44,12 @@ children에 속한 컴포넌트는 provider로 부터 어떤 데이터도 가져
 
 ---
 
-써 볼만한 곳
+#### 써보면 괜찮을 것 같은 곳
+
 : 현재 진행중인 'kafuncha'프로젝트에서 fetch api 코드들을 전부 provider에 넣어서 하위 컴포넌트 들에서 쓸수 있게끔 하면 좋을 거 것 같다.
 
 연습한 codesandbox link : https://codesandbox.io/s/nooks-forked-445m6
+
+## Visitor
+
+- [x] Venny
